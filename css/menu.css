@@ -1,0 +1,142 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #034D91;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.header-box {
+    padding: 15px;
+    height: 10%;
+    background-color: #de6d46;
+    width: 20%;
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header h2 {
+    font-size: medium;
+    margin-top: -10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul a:hover {
+    background-color: #c04116;
+}
+
+.cta-button {
+    font-size: medium;
+    display: inline-block;
+    background-color: #de6d46;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+section.pizza-list {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Para que las cajas se envuelvan si no caben en la fila */
+    justify-content: center; /* Para centrar horizontalmente */
+}
+
+.pizza-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    height: 400px; 
+}
+
+.pizza-item img {
+    width: 200px important; 
+    height: 150px important; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.pizza-item h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.pizza-item p {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #034D91;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+    position: fixed;
+    bottom: 0;
+    min-width: 100%;
+}
+
+/* Estilos para pantallas con un ancho máximo de 768px (dispositivos móviles) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px; /* Tamaño de fuente más pequeño */
+    }
+
+    header h2 {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        margin-top: -5px; /* Espacio superior más pequeño */
+    }
+
+    .cta-button {
+        padding: 5px 20px; /* Espaciado del botón más pequeño */
+        margin-right: 10px; /* Margen derecho más pequeño */
+    }
+}
+
+/* Estilos para pantallas con un ancho mínimo de 769px (computadoras portátiles) */
+@media (min-width: 769px) {
+    header h1 {
+        font-size: 30px; /* Tamaño de fuente original */
+    }
+
+    header h2 {
+        font-size: medium; /* Tamaño de fuente original */
+        margin-top: -10px; /* Espacio superior original */
+    }
+
+    .cta-button {
+        padding: 10px 50px; /* Espaciado del botón original */
+        margin-right: 30px; /* Margen derecho original */
+    }
+}
