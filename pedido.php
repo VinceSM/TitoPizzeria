@@ -8,29 +8,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tipoPizza = $_POST["tipo-pizza"];
     $cantidad = $_POST["cantidad"];
     $direccionEntrega = $_POST["direccion"];
-
-    // Validar los datos (puedes agregar más validaciones según tus necesidades)
+    $totalPedido = 0;
 
     // Conectar a la base de datos (ajusta los detalles de conexión según tu configuración)
     $conexion = mysqli_connect("localhost", "root", "", "pedidos");
+    $conexion2 = mysqli_connect("localhost", "root", "", "menu");
 
     if (!$conexion) {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }
 
-    // Preparar la consulta SQL para insertar el pedido sin especificar un id
-    $sql = "INSERT INTO pedidos (tipo_pizza, cantidad, direccion_entrega) VALUES ('$tipoPizza', $cantidad, '$direccionEntrega')";
+    // Obtener el precio de la pizza desde la tabla pizzas
+    $sql_pizza = "SELECT precio FROM pizzas_generadas WHERE nombre = '$tipoPizza'";
+    $result_pizza = mysqli_query($conexion2, $sql_pizza);
 
-    if (mysqli_query($conexion, $sql)) {
-        $success_message = "Pedido realizado con éxito.";
+    if ($result_pizza && mysqli_num_rows($result_pizza) > 0) {
+        $row_pizza = mysqli_fetch_assoc($result_pizza);
+        $precioPizza = $row_pizza["precio"];
+
+        // Calcular el total del pedido multiplicando el precio por la cantidad
+        
+        $totalPedido = $precioPizza * $cantidad;
+
+        // Preparar la consulta SQL para insertar el pedido
+        $sql_pedido = "INSERT INTO pedidos (tipo_pizza, cantidad, direccion_entrega, total_pedido) 
+        VALUES ('$tipoPizza', $cantidad, '$direccionEntrega', $totalPedido)";
+
+        if (mysqli_query($conexion, $sql_pedido)) {
+            $success_message = "Pedido realizado con éxito. Total: $" . $totalPedido;
+        } else {
+            $error_message = "Error al realizar el pedido: " . mysqli_error($conexion);
+        }
     } else {
-        $error_message = "Error al realizar el pedido: " . mysqli_error($conexion);
+        $error_message = "No se encontró el precio de la pizza en la base de datos.";
     }
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

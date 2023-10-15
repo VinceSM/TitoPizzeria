@@ -11,7 +11,8 @@ CREATE TABLE pedidos (
     cantidad INT NOT NULL,
     direccion_entrega VARCHAR(255) NOT NULL,
     fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    estado_pedido ENUM('en_proceso', 'enviado', 'cancelado') DEFAULT 'en_proceso'
+    estado_pedido ENUM('en_proceso', 'enviado', 'cancelado', 'entregado') DEFAULT 'en_proceso',
+    total_pedido DECIMAL (10, 2) NOT NULL
 );
 
 GRANT ALL PRIVILEGES ON pedidos.* TO 'nombre_de_usuario'@'localhost' IDENTIFIED BY 'tu_contraseña';

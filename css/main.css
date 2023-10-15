@@ -40,6 +40,7 @@ header {
 @media (max-width: 768px) {
     header {
         height: 80px; /* Reduce la altura del encabezado en dispositivos móviles */
+        min-width: 100%;
     }
 
     .cta-button {
@@ -48,6 +49,7 @@ header {
 
     .imagen {
         padding: 20px; /* Ajusta el espaciado de la imagen en dispositivos móviles */
+        width: 10%;
     }
 }
 
