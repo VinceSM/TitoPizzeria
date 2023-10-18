@@ -10,7 +10,7 @@ body {
 h1.background-image {
     color: #f4f4f4; 
     background-image: url('../jpg/inicio1.jpg');
-    padding: 45px;
+    padding: 40px;
     margin: 0;
 }
 
@@ -33,6 +33,32 @@ nav a:hover {
 h2 {
     margin-top: 20px;
     color: #333; /* Color oscuro para el texto principal */
+}
+img {
+    width: 50%; /* La imagen se ajustará automáticamente al ancho de la ventana */
+    height: 9%; /* Mantiene la proporción de aspecto de la imagen */
+}
+
+
+/* Estilos para pantallas con una resolución máxima de 1280px */
+@media (max-width: 1280px) {
+    img {
+        max-width: 800px; /* Tamaño máximo para la imagen en resoluciones grandes */
+    }
+}
+
+/* Estilos para pantallas con una resolución máxima de 768px (dispositivos móviles) */
+@media (max-width: 767px) {
+    img {
+        display: none;
+    }
+}
+
+@media (min-width: 200px) {
+    body{
+        max-width: 100%;
+    }
+    
 }
 
 footer {

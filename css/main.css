@@ -13,12 +13,24 @@ header {
     text-align: center;
     padding: 1px;
     height: 110px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté en la parte superior de la pila de capas */
 }
 
 .imagen {
+    text-align: center;
     background-position: center;
     background-repeat: no-repeat;
     padding: 28px;
+}
+
+.imagen img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    margin-top: 110px; /* Agrega un margen superior igual a la altura del header */
 }
 
 .cta-button {
@@ -39,17 +51,17 @@ header {
 /* Estilos para pantallas con un ancho máximo de 768px (dispositivos móviles) */
 @media (max-width: 768px) {
     header {
-        height: 80px; /* Reduce la altura del encabezado en dispositivos móviles */
+        height: 80px;
         min-width: 100%;
     }
 
     .cta-button {
-        padding: 8px 30px; /* Ajusta el espaciado del botón en dispositivos móviles */
+        padding: 8px 30px;
     }
 
     .imagen {
-        padding: 20px; /* Ajusta el espaciado de la imagen en dispositivos móviles */
-        width: 10%;
+        padding: 20px;
+        width: 100%;
     }
 }
 
@@ -58,7 +70,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px; /* Ajusta el alto según tus necesidades */
+    height: 40px;
     background-color: #034D91;
     color: #fff;
     text-align: center;
