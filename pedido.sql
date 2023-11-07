@@ -1,8 +1,5 @@
--- Crear una base de datos si aún no existe
-CREATE DATABASE IF NOT EXISTS pedidos;
 
--- Usar la base de datos
-USE pedidos;
+USE pizzeria;
 
 -- Crear una tabla para almacenar pedidos
 CREATE TABLE pedidos (

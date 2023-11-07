@@ -1,8 +1,5 @@
--- Crear una base de datos si aún no existe
-CREATE DATABASE IF NOT EXISTS menu;
 
--- Usar la base de datos
-USE menu;
+USE pizzeria;
 
 -- Crear una tabla para almacenar pizzas
 CREATE TABLE pizzas_generadas (

@@ -1,8 +1,6 @@
--- Crear una base de datos si aún no existe
-CREATE DATABASE IF NOT EXISTS usuarios;
 
 -- Usar la base de datos
-USE usuarios;
+USE pizzeria;
 
 -- Crear la tabla de usuarios
 CREATE TABLE `usuarios` (

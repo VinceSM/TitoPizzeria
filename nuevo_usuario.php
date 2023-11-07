@@ -1,4 +1,5 @@
 <?php
+// Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibe los datos del formulario
     $username = $_POST["username"];
@@ -9,9 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conecta a la base de datos 
     $host = "localhost";
-    $usuario = "tu_usuario";
-    $contrasena = "tu_contrasena";
-    $base_de_datos = "tu_base_de_datos";
+    $usuario = "root";
+    $contrasena = "";
+    $base_de_datos = "pizzeria";
 
     $conexion = new mysqli($host, $usuario, $contrasena, $base_de_datos);
 
@@ -39,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion->close();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

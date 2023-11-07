@@ -20,9 +20,9 @@
     <section class="pizza-list">
     <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "menu";
+    $username = "root"; // Cambia esto por tu usuario de la base de datos
+    $password = ""; // Cambia esto por tu contraseña de la base de datos
+    $dbname = "pizzeria"; // Ajusta el nombre de tu base de datos
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -53,6 +53,7 @@
 
     $conn->close();
     ?>
+
     </section>
     <br>
     <br>

@@ -11,14 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalPedido = 0;
 
     // Conectar a la base de datos (ajusta los detalles de conexión según tu configuración)
-    $conexion = mysqli_connect("localhost", "root", "", "pedidos");
-    $conexion2 = mysqli_connect("localhost", "root", "", "menu");
+    $conexion = mysqli_connect("localhost", "root", "", "pizzeria");
+    $conexion2 = mysqli_connect("localhost", "root", "", "pizzeria");
 
     if (!$conexion) {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }
 
-    // Obtener el precio de la pizza desde la tabla pizzas
+    // Obtener el precio de la pizza desde la tabla pizzas_generadas
     $sql_pizza = "SELECT precio FROM pizzas_generadas WHERE nombre = '$tipoPizza'";
     $result_pizza = mysqli_query($conexion2, $sql_pizza);
 
@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $precioPizza = $row_pizza["precio"];
 
         // Calcular el total del pedido multiplicando el precio por la cantidad
-        
         $totalPedido = $precioPizza * $cantidad;
 
         // Preparar la consulta SQL para insertar el pedido
@@ -47,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conexion);
 }
 ?>
+
+
 
 
 <!DOCTYPE html>

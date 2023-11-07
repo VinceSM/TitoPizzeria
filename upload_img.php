@@ -3,9 +3,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES["imagen"])) {
         // Conexión a la base de datos
         $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "menu";
+        $username = "root"; // Cambia esto por tu usuario de la base de datos
+        $password = ""; // Cambia esto por tu contraseña de la base de datos
+        $dbname = "pizzeria"; // Ajusta el nombre de tu base de datos
 
         $conexion = new mysqli($servername, $username, $password, $dbname);
 
@@ -14,13 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Obtener los datos del formulario
-        $nombre = $_POST["nombre"];
-        $descripcion = $_POST["descripcion"];
-        $precio = $_POST["precio"];
+        $nombre = $conexion->real_escape_string($_POST["nombre"]);
+        $descripcion = $conexion->real_escape_string($_POST["descripcion"]);
+        $precio = floatval($_POST["precio"]);
         $nombreArchivo = $_FILES["imagen"]["name"];
         $ubicacionTemporal = $_FILES["imagen"]["tmp_name"];
 
-        $directorioDestino = "jpg/";
+        $directorioDestino = "tu_ruta/"; // Ajusta la ruta de destino a tu directorio
         $rutaDestino = $directorioDestino . $nombreArchivo;
 
         if (move_uploaded_file($ubicacionTemporal, $rutaDestino)) {
@@ -28,7 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO pizzas_generadas (nombre, descripcion, precio, imagen_url) VALUES ('$nombre', '$descripcion', $precio, '$rutaDestino')";
 
             if ($conexion->query($sql) === true) {
-                header("Location: menu.php"); // Redirige al usuario a la página de menú
+                // Redirige al usuario a la página de menú
+                header("Location: menu.php");
+                exit;
             } else {
                 echo "Error al guardar la información en la base de datos: " . $conexion->error;
             }
@@ -42,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
