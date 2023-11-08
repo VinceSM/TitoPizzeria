@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreArchivo = $_FILES["imagen"]["name"];
         $ubicacionTemporal = $_FILES["imagen"]["tmp_name"];
 
-        $directorioDestino = "tu_ruta/"; // Ajusta la ruta de destino a tu directorio
+        $directorioDestino = "jpg/"; // Ajusta la ruta de destino a tu directorio
         $rutaDestino = $directorioDestino . $nombreArchivo;
 
         if (move_uploaded_file($ubicacionTemporal, $rutaDestino)) {

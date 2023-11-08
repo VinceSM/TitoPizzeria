@@ -5,6 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email = $_POST["email"];
+    $telefono = $_POST["telefono"];
 
     // Realiza la validación de los datos (puedes agregar más validaciones según tus necesidades)
 
@@ -22,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Inserta los datos en la base de datos (debes tener una tabla "usuarios" con los campos correspondientes)
-    $sql = "INSERT INTO usuarios (usuario, password, email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO usuarios (usuario, password, email, telefono) VALUES (?, ?, ?, ?)";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("sss", $username, $password, $email);
+    $stmt->bind_param("sss", $username, $password, $email, $telefono);
 
     if ($stmt->execute()) {
         // Registro exitoso
@@ -69,6 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="campo">
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" name="email" id="email" required>
+                </div>
+                <div class="campo">
+                    <label for="telefono">Telefono:</label>
+                    <input type="number" name="telefono" id="telefono" required>
                 </div>
                 <div class="boton">
                     <button type="submit" name="registrarse">Registrarse</button>

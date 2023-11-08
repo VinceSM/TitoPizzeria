@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
 
     // Validar los datos (puedes agregar más validaciones según tus requerimientos)
 
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Insertar los datos en la base de datos
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO usuarios (usuario, password, email) ";
+        $sql = "INSERT INTO usuarios (usuario, password, email, telefono) ";
         $sql .= "VALUES ('$username', '$passwordHash', '$email')";
 
         if ($conexion->query($sql) === TRUE) {
