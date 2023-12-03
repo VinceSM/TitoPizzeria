@@ -28,6 +28,6 @@
         <p>© 2023 Pizzería Tito's. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="/menu.js"></script>
+    <script src="./menu.js"></script>
 </body>
 </html>
