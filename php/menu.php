@@ -49,6 +49,7 @@ if (!isset($_SESSION['usuarios'])) {
             $descripcion = $row["descripcion"];
             $precio = $row["precio"];
             $imagen_url = $row["imagen_url"];
+            // $imagen_url = "../jpg/";
 
             echo "<div class='pizza-item'>";
             echo "<img src='" . $imagen_url . "' alt='" . $nombre . "' width='275' height='183'>";

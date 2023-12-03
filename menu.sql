@@ -1,4 +1,3 @@
-
 USE pizzeria;
 
 -- Crear una tabla para almacenar pizzas

@@ -23,7 +23,7 @@ $stmt->bind_param("sssss", $username, $passwordHash, $email, $nombre, $telefono)
 // Ejecutamos la consulta
 if ($stmt->execute()) {
     // Registro exitoso, redirigir a la página de inicio de sesión
-    header("Location: ./login.html");
+    header("Location: ../login.html");
 } else {
     // Error en el registro
     echo "Error al registrar el usuario: " . $conexion->error;

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if($_SESSION["rol"] != "admin"){header("Location: ./login.html");}
+if($_SESSION["rol"] != "admin"){header("Location: ../login.html");}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES["imagen"])) {
         // Conexión a la base de datos
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreArchivo = $_FILES["imagen"]["name"];
         $ubicacionTemporal = $_FILES["imagen"]["tmp_name"];
 
-        $directorioDestino = "../jpg/"; // Ajusta la ruta de destino a tu directorio
+        $directorioDestino = "../Pizzeria/jpg/"; // Ajusta la ruta de destino a tu directorio
         $rutaDestino = $directorioDestino . $nombreArchivo;
 
         if (move_uploaded_file($ubicacionTemporal, $rutaDestino)) {
