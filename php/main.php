@@ -4,8 +4,8 @@
     <!-- Configuración del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css"> <!-- Enlace al archivo CSS principal -->
-    <link rel="stylesheet" href="css/menudesp.css"> <!-- Enlace a un archivo CSS adicional para el menú -->
+    <link rel="stylesheet" href="../Pizzeria/css/main.css"> <!-- Enlace al archivo CSS principal -->
+    <link rel="stylesheet" href="../Pizzeria/css/menudesp.css"> <!-- Enlace a un archivo CSS adicional para el menú -->
     <title>Pizzería Tito's</title>
 </head>
 <body>

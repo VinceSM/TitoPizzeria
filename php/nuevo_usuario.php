@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Nuevo Usuario</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="../Pizzeria/css/style.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
     <header>
