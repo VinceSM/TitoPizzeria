@@ -3,7 +3,7 @@ session_start();
 
 // Verificar si el usuario no está autenticado
 if (!isset($_SESSION['usuarios'])) {
-    header("Location: /php/main.php");
+    header("Location: ../Pizzeria/php/main.php");
     exit();
 }
 ?>
@@ -22,8 +22,8 @@ if (!isset($_SESSION['usuarios'])) {
             <h2>Menú de Pizzas</h2>
         </div>
         <ul>
-            <a href="/php/main.php" id="volver" class="cta-button">Volver</a>
-            <a href="/php/pedido.php" class="cta-button">Ordenar Ahora</a>
+            <a href="../Pizzeria/php/main.php" id="volver" class="cta-button">Volver</a>
+            <a href="../Pizzeria/php/pedido.php" class="cta-button">Ordenar Ahora</a>
         </ul>
     </header>  
     <section class="pizza-list">

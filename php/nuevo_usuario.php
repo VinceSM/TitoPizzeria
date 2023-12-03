@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main>
         <section id="registro-form">
             <h2>¡Regístrate!</h2> <!-- Título del formulario -->
-            <form action="/php/procesar_registro.php" method="post">
+            <form action="../Pizzeria/php/procesar_registro.php" method="post">
                 <!-- Campos para el registro del usuario -->
                 <div class="campo">
                     <label for="username">Nombre de usuario:</label>

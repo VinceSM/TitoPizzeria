@@ -18,10 +18,10 @@
             <button id="menu-button" class="cta-button">Indice</button>
             <!-- Menú desplegable -->
             <div id="menu-dropdown" class="dropdown-content">
-                <a href="/php/menu.php">Ver Menú</a>
-                <a href="/php/pedido.php">Ordenar Ahora</a>
+                <a href="../Pizzeria/php/menu.php">Ver Menú</a>
+                <a href="../Pizzeria/php/pedido.php">Ordenar Ahora</a>
                 <!-- <a href="upload_img.php">Solo personal autorizado</a> -->
-                <a href="/php/logout.php">Cerrar Sesión</a>
+                <a href="../Pizzeria/php/logout.php">Cerrar Sesión</a>
             </div>
         </div>
     </header>

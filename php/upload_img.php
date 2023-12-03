@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($conexion->query($sql) === true) {
                 // Redirige al usuario a la página de menú después de guardar la información
-                header("Location: /php/menu.php");
+                header("Location: ../Pizzeria/php/menu.php");
                 exit;
             } else {
                 echo "Error al guardar la información en la base de datos: " . $conexion->error;
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h1>Carga de pizzas</h1> <!-- Título de la sección -->
-    <form action="/php/upload_img.php" method="POST" enctype="multipart/form-data">
+    <form action="../Pizzeria/php/upload_img.php" method="POST" enctype="multipart/form-data">
         <!-- Formulario para cargar información de la pizza -->
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
     <br>
     <br>
-    <button class= "cta-button"> <a href="/php/logout.php">Cerrar Sesión</a> </button> <!-- Botón para cerrar sesión -->
+    <button class= "cta-button"> <a href="../Pizzeria/php/logout.php">Cerrar Sesión</a> </button> <!-- Botón para cerrar sesión -->
 </body>
 </html>
 
