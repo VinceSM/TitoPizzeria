@@ -1,6 +1,6 @@
 <?php
 // Incluimos el script de conexión
-require_once 'php/conexion.php';
+require_once 'conexion.php';
 session_start(); 
 
 // Tomamos los datos del formulario

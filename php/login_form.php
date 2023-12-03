@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // if ($_SESSION["rol"] == "admin") {
         //     header("Location: upload_img.php"); // Página de administrador
         // } else {
-        //     header("Location: main.html"); // Página para usuarios normales
+        //     header("Location: main.php"); // Página para usuarios normales
         // }
 
         if (password_verify($contrasena, $hashed_password)) {
@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["usuarios"] = $row["usuario"];
             $_SESSION["rol"] = $row["rol"]; // Almacena el rol del usuario
             if ($_SESSION["rol"] == "admin") {
-                header("Location: php/upload_img.php"); // Página de administrador
+                header("Location: upload_img.php"); // Página de administrador
             } else {
-                header("Location: php/main.php"); // Página para usuarios normales
+                header("Location: main.php"); // Página para usuarios normales
             }
             mysqli_close($conexion);
             $success_message = "Inicio de sesión exitoso. Redirigiendo...";
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" name="iniciar_sesion">Iniciar Sesión</button>
         </div>
         </form>
-        <p>¿No tienes cuenta? <a href="php/nuevo_usuario.php">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="nuevo_usuario.php">Regístrate aquí</a></p>
         
         <!-- Mostrar mensaje de error si existe -->
         <div id="error-message">

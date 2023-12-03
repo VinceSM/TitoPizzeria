@@ -6,7 +6,7 @@ $success_message = $error_message = "";
 
 // Verificar si el usuario no está autenticado
 if (!isset($_SESSION['usuarios'])) {
-    header("Location: php/main.php");
+    header("Location: main.php");
     exit();
 }
 
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Realizar Pedido</h1>
         </div>
             <ul>
-                <a href="php/main.php" id="volver" class="cta-button">Volver</a>
+                <a href="main.php" id="volver" class="cta-button">Volver</a>
             </ul>
     </header>
 

@@ -14,10 +14,10 @@
             <br>
             <button id="menu-button" class="cta-button">Indice</button>
             <div id="menu-dropdown" class="dropdown-content">
-                <a href="php/menu.php">Ver Menú</a>
-                <a href="php/pedido.php">Ordenar Ahora</a>
+                <a href="menu.php">Ver Menú</a>
+                <a href="pedido.php">Ordenar Ahora</a>
                 <!-- <a href="upload_img.php">Solo personal autorizado</a> -->
-                <a href="php/logout.php">Cerrar Sesión</a>
+                <a href="logout.php">Cerrar Sesión</a>
             </div>
         </div>
     </header>

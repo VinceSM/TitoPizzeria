@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main>
         <section id="registro-form">
             <h2>¡Regístrate!</h2>
-            <form action="php/procesar_registro.php" method="post">
+            <form action="procesar_registro.php" method="post">
                 <div class="campo">
                     <label for="username">Nombre de usuario:</label>
                     <input type="text" name="username" id="username" required>
