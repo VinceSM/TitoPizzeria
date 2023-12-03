@@ -8,5 +8,5 @@ $_SESSION = array();
 session_destroy();
 
 // Redirige al usuario a la página de inicio
-header("Location: ../Pizzeria/index.html");
+header("Location: ./index.html");
 ?>

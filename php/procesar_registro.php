@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conexion->query($sql) === TRUE) {
             // Registro exitoso, redirigir a la página de inicio de sesión
-            header("Location: ../Pizzeria/login.html");
+            header("Location: ./login.html");
         } else {
             // Error al registrar, redirigir a una página de error o mostrar un mensaje de error
             echo "Error: " . $sql . "<br>" . $conexion->error;

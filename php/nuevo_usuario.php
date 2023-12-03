@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Registro exitoso
-        header("Location: ../Pizzeria/login.html"); // Redirige al usuario a la página de inicio de sesión
+        header("Location: ./login.html"); // Redirige al usuario a la página de inicio de sesión
         exit;
     } else {
         // Error en el registro
