@@ -6,7 +6,7 @@ $success_message = $error_message = "";
 
 // Verificar si el usuario no está autenticado
 if (!isset($_SESSION['usuarios'])) {
-    header("Location: ../Pizzeria/php/main.php");
+    header("Location: /php/main.php");
     exit();
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Pizzeria/css/pedido.css">
+    <link rel="stylesheet" href="/css/pedido.css">
     <title>Realizar Pedido</title>
 </head>
 <body>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Realizar Pedido</h1>
         </div>
             <ul>
-                <a href="../Pizzeria/php/main.php" id="volver" class="cta-button">Volver</a>
+                <a href="/php/main.php" id="volver" class="cta-button">Volver</a>
             </ul>
     </header>
 

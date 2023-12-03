@@ -1,6 +1,6 @@
 <?php
 // Incluimos el script de conexión
-require_once '../Pizzeria/php/conexion.php';
+require_once '/php/conexion.php';
 session_start(); 
 
 // Tomamos los datos del formulario
