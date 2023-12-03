@@ -2,7 +2,7 @@
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir el archivo de conexión a la base de datos (asegúrate de que 'conexion.php' esté correctamente configurado)
-    require_once 'conexion.php';
+    require_once '/php/conexion.php';
 
     // Obtener los datos del formulario
     $username = $_POST['username'];
@@ -20,7 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO usuarios (usuario, password, email, telefono) ";
-        $sql .= "VALUES ('$username', '$passwordHash', '$email')";
+        $sql .= "VALUES ('$username', '$passwordHash', '$email', '$telefono')";
+        
 
         if ($conexion->query($sql) === TRUE) {
             // Registro exitoso, redirigir a la página de inicio de sesión
@@ -35,6 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion->close();
 } else {
     // Redirigir si se accede directamente a este archivo sin enviar el formulario
-    header("Location: nuevo-usuario.php");
+    header("Location: /php/nuevo-usuario.php");
 }
 ?>

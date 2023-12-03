@@ -1,4 +1,9 @@
 <?php
+// Inicia la sesión y verifica el rol del usuario
+session_start();
+if ($_SESSION["rol"] != "admin") {
+    header("Location: login.html"); // Redirecciona si el usuario no tiene el rol de administrador
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES["imagen"])) {
         // Conexión a la base de datos
@@ -28,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO pizzas_generadas (nombre, descripcion, precio, imagen_url) VALUES ('$nombre', '$descripcion', $precio, '$rutaDestino')";
 
             if ($conexion->query($sql) === true) {
-                // Redirige al usuario a la página de menú
-                header("Location: menu.php");
+                // Redirige al usuario a la página de menú después de guardar la información
+                header("Location: /php/menu.php");
                 exit;
             } else {
                 echo "Error al guardar la información en la base de datos: " . $conexion->error;
@@ -45,18 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Carga de pizzas</title>
+    <link rel="stylesheet" href="css/main.css"> <!-- Enlace al archivo CSS -->
+    <title>Carga de pizzas</title> <!-- Título de la página -->
 </head>
 <body>
-    <h1>Carga de pizzas</h1>
-    <form action="upload_img.php" method="POST" enctype="multipart/form-data">
+    <h1>Carga de pizzas</h1> <!-- Título de la sección -->
+    <form action="/php/upload_img.php" method="POST" enctype="multipart/form-data">
+        <!-- Formulario para cargar información de la pizza -->
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         
@@ -71,5 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <button type="submit">Guardar Pizza</button>
     </form>
+    <br>
+    <br>
+    <br>
+    <button class= "cta-button"> <a href="/php/logout.php">Cerrar Sesión</a> </button> <!-- Botón para cerrar sesión -->
 </body>
 </html>
+

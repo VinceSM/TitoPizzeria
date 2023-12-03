@@ -45,20 +45,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Nuevo Usuario</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
     <header>
-        <h1>Registro de Nuevo Usuario</h1>
+        <h1>Registro de Nuevo Usuario</h1> <!-- Encabezado principal -->
     </header>
     
     <main>
         <section id="registro-form">
-            <h2>¡Regístrate!</h2>
-            <form action="procesar_registro.php" method="post">
+            <h2>¡Regístrate!</h2> <!-- Título del formulario -->
+            <form action="/php/procesar_registro.php" method="post">
+                <!-- Campos para el registro del usuario -->
                 <div class="campo">
                     <label for="username">Nombre de usuario:</label>
                     <input type="text" name="username" id="username" required>
@@ -72,18 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="campo">
-                    <label for="telefono">Telefono:</label>
+                    <label for="telefono">Teléfono:</label>
                     <input type="number" name="telefono" id="telefono" required>
                 </div>
                 <div class="boton">
-                    <button type="submit" name="registrarse">Registrarse</button>
+                    <button type="submit" name="registrarse">Registrarse</button> <!-- Botón de registro -->
                 </div>
             </form>
         </section>
     </main>
     
     <footer>
-    <p>© 2023 Tito's Pizzería. Todos los derechos Reservados</p>
+        <p>© 2023 Tito's Pizzería. Todos los derechos Reservados</p> <!-- Pie de página -->
     </footer>
 </body>
 </html>

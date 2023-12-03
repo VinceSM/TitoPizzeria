@@ -11,5 +11,5 @@ CREATE TABLE pedidos (
     estado_pedido ENUM('en_proceso', 'enviado', 'cancelado', 'entregado') DEFAULT 'en_proceso',
     total_pedido DECIMAL (10, 2) NOT NULL
 );
-
+-- Otorgar permisos para la tabla pizzas
 GRANT ALL PRIVILEGES ON pedidos.* TO 'nombre_de_usuario'@'localhost' IDENTIFIED BY 'tu_contraseña';

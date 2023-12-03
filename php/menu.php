@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Verificar si el usuario no está autenticado
+if (!isset($_SESSION['usuarios'])) {
+    header("Location: /php/main.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,16 +22,17 @@
             <h2>Menú de Pizzas</h2>
         </div>
         <ul>
-            <a href="main.html" id="volver" class="cta-button">Volver</a>
-            <a href="pedido.php" class="cta-button">Ordenar Ahora</a>
+            <a href="/php/main.php" id="volver" class="cta-button">Volver</a>
+            <a href="/php/pedido.php" class="cta-button">Ordenar Ahora</a>
         </ul>
     </header>  
     <section class="pizza-list">
     <?php
+
     $servername = "localhost";
-    $username = "root"; // Cambia esto por tu usuario de la base de datos
-    $password = ""; // Cambia esto por tu contraseña de la base de datos
-    $dbname = "pizzeria"; // Ajusta el nombre de tu base de datos
+    $username = "root"; 
+    $password = ""; 
+    $dbname = "pizzeria"; 
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 

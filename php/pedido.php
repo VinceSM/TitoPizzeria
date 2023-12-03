@@ -1,6 +1,14 @@
 <?php
+session_start();
 // Inicializar variables para mensajes de éxito y error
 $success_message = $error_message = "";
+
+
+// Verificar si el usuario no está autenticado
+if (!isset($_SESSION['usuarios'])) {
+    header("Location: /php/main.php");
+    exit();
+}
 
 // Verificar si el formulario de pedido se ha enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Conectar a la base de datos (ajusta los detalles de conexión según tu configuración)
     $conexion = mysqli_connect("localhost", "root", "", "pizzeria");
-    $conexion2 = mysqli_connect("localhost", "root", "", "pizzeria");
 
     if (!$conexion) {
         die("La conexión a la base de datos falló: " . mysqli_connect_error());
@@ -20,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Obtener el precio de la pizza desde la tabla pizzas_generadas
     $sql_pizza = "SELECT precio FROM pizzas_generadas WHERE nombre = '$tipoPizza'";
-    $result_pizza = mysqli_query($conexion2, $sql_pizza);
+    $result_pizza = mysqli_query($conexion, $sql_pizza);
 
     if ($result_pizza && mysqli_num_rows($result_pizza) > 0) {
         $row_pizza = mysqli_fetch_assoc($result_pizza);
@@ -47,9 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Realizar Pedido</h1>
         </div>
             <ul>
-                <a href="main.html" id="volver" class="cta-button">Volver</a>
+                <a href="/php/main.php" id="volver" class="cta-button">Volver</a>
             </ul>
     </header>
 

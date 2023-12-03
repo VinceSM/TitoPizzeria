@@ -9,15 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario
     $correo = $_POST["correo"];
     $contrasena = $_POST["contrasena"];
-
-    // Conectar a la base de datos (ajusta los detalles de conexión según tu configuración)
+   
+   // Conectar a la base de datos (ajusta los detalles de conexión según tu configuración)
     $conexion = mysqli_connect("localhost", "root", "", "pizzeria");
-    
-    if (!$conexion) {
-        die("La conexión a la base de datos falló: " . mysqli_connect_error());
+   
+   if (!$conexion) {
+    die("La conexión a la base de datos falló: " . mysqli_connect_error());
     }
-
-    // Consulta SQL para verificar las credenciales del usuario
+   
+   // Consulta SQL para verificar las credenciales del usuario
     $sql = "SELECT * FROM usuarios WHERE email = '$correo'";
     $result = mysqli_query($conexion, $sql);
 
@@ -25,20 +25,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         $hashed_password = $row["password"];
 
+        // if ($_SESSION["rol"] == "admin") {
+        //     header("Location: /php/upload_img.php"); // Página de administrador
+        // } else {
+        //     header("Location: /php/main.php"); // Página para usuarios normales
+        // }
+
         if (password_verify($contrasena, $hashed_password)) {
             // Inicio de sesión exitoso
             $_SESSION["usuarios"] = $row["usuario"];
+            $_SESSION["rol"] = $row["rol"]; // Almacena el rol del usuario
+            if ($_SESSION["rol"] == "admin") {
+                header("Location: /php/upload_img.php"); // Página de administrador
+            } else {
+                header("Location: /php/main.php"); // Página para usuarios normales
+            }
             mysqli_close($conexion);
             $success_message = "Inicio de sesión exitoso. Redirigiendo...";
             
             // Puedes usar una redirección meta o JavaScript para redirigir al usuario después de unos segundos
-            echo '<meta http-equiv="refresh" content="2;url=main.html">';
+            echo '<meta http-equiv="refresh" content="2;url=/php/main.php">';
             exit; // Salir del script
-        }
-        else {
+        } else {
             $error_message = "Contraseña o Correo incorrectos. Por favor, inténtelo de nuevo.";
         }
-    } 
+    } else {
+        $error_message = "Usuario no encontrado.";
+    }
     
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
@@ -72,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" name="iniciar_sesion">Iniciar Sesión</button>
         </div>
         </form>
-        <p>¿No tienes cuenta? <a href="nuevo_usuario.php">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="/php/nuevo_usuario.php">Regístrate aquí</a></p>
         
         <!-- Mostrar mensaje de error si existe -->
         <div id="error-message">
