@@ -1,6 +1,6 @@
 <?php
 // Incluimos el script de conexión
-require_once '/php/conexion.php';
+require_once 'php/conexion.php';
 session_start(); 
 
 // Tomamos los datos del formulario
@@ -23,7 +23,7 @@ $stmt->bind_param("sssss", $username, $passwordHash, $email, $nombre, $apellido)
 // Ejecutamos la consulta
 if ($stmt->execute()) {
     // Registro exitoso, redirigir a la página de inicio de sesión
-    header("Location: login.html");
+    header("Location: ../login.html");
 } else {
     // Error en el registro
     echo "Error al registrar el usuario: " . $conexion->error;

@@ -2,7 +2,7 @@
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Incluir el archivo de conexión a la base de datos (asegúrate de que 'conexion.php' esté correctamente configurado)
-    require_once '/php/conexion.php';
+    require_once 'php/conexion.php';
 
     // Obtener los datos del formulario
     $username = $_POST['username'];
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conexion->query($sql) === TRUE) {
             // Registro exitoso, redirigir a la página de inicio de sesión
-            header("Location: login.html");
+            header("Location: /login.html");
         } else {
             // Error al registrar, redirigir a una página de error o mostrar un mensaje de error
             echo "Error: " . $sql . "<br>" . $conexion->error;
@@ -36,6 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion->close();
 } else {
     // Redirigir si se accede directamente a este archivo sin enviar el formulario
-    header("Location: /php/nuevo-usuario.php");
+    header("Location: php/nuevo-usuario.php");
 }
 ?>

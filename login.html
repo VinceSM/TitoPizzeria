@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Se establece el conjunto de caracteres y la configuración inicial para dispositivos móviles -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título de la página -->
     <title>Iniciar Sesión</title>
-    <!-- Enlace al archivo CSS para estilizar la página -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Encabezado de la página -->
     <header id="main-header">
         <h1>Iniciar Sesión</h1>
     </header>
-    <!-- Contenido principal -->
     <main>
-        <!-- Formulario para iniciar sesión -->
-        <form action="/php/login_form.php" method="POST">
-            <!-- Campo para ingresar el correo electrónico -->
-            <div class="campo">
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" name="correo" required><br>
-            </div>
-            <!-- Campo para ingresar la contraseña -->
-            <div class="campo">
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" name="contrasena" required><br>
-            </div>
-            <!-- Botón para enviar el formulario -->
-            <div class="boton">
-                <button type="submit" name="">Iniciar Sesión</button>
-            </div>
+        <form action="php/login_form.php" method="POST">
+        <div class="campo">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" name="correo" required><br>
+        </div>
+        <div class="campo">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" required><br>
+        </div>
+        <div class="boton">
+            <button type="submit" name="">Iniciar Sesión</button>
+        </div>
         </form>
-        <!-- Enlace para registrarse -->
-        <p>¿No tienes cuenta? <a href="/php/nuevo_usuario.php">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="php/nuevo_usuario.php">Regístrate aquí</a></p>
     </main>
-    <!-- Pie de página -->
     <footer id="main-footer">
         <p>© 2023 Pizzería Tito's. Todos los derechos reservados.</p>
     </footer>

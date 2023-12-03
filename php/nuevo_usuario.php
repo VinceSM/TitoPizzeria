@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Registro exitoso
-        header("Location: login.html"); // Redirige al usuario a la página de inicio de sesión
+        header("Location: /login.html"); // Redirige al usuario a la página de inicio de sesión
         exit;
     } else {
         // Error en el registro
@@ -45,22 +45,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Configuración del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Nuevo Usuario</title>
-    <link rel="stylesheet" href="/css/style.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <h1>Registro de Nuevo Usuario</h1> <!-- Encabezado principal -->
+        <h1>Registro de Nuevo Usuario</h1>
     </header>
     
     <main>
         <section id="registro-form">
-            <h2>¡Regístrate!</h2> <!-- Título del formulario -->
-            <form action="/php/procesar_registro.php" method="post">
-                <!-- Campos para el registro del usuario -->
+            <h2>¡Regístrate!</h2>
+            <form action="php/procesar_registro.php" method="post">
                 <div class="campo">
                     <label for="username">Nombre de usuario:</label>
                     <input type="text" name="username" id="username" required>
@@ -74,18 +72,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="campo">
-                    <label for="telefono">Teléfono:</label>
+                    <label for="telefono">Telefono:</label>
                     <input type="number" name="telefono" id="telefono" required>
                 </div>
                 <div class="boton">
-                    <button type="submit" name="registrarse">Registrarse</button> <!-- Botón de registro -->
+                    <button type="submit" name="registrarse">Registrarse</button>
                 </div>
             </form>
         </section>
     </main>
     
     <footer>
-        <p>© 2023 Tito's Pizzería. Todos los derechos Reservados</p> <!-- Pie de página -->
+    <p>© 2023 Tito's Pizzería. Todos los derechos Reservados</p>
     </footer>
 </body>
 </html>

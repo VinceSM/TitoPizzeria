@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = $row["password"];
 
         // if ($_SESSION["rol"] == "admin") {
-        //     header("Location: /php/upload_img.php"); // Página de administrador
+        //     header("Location: upload_img.php"); // Página de administrador
         // } else {
-        //     header("Location: /php/main.php"); // Página para usuarios normales
+        //     header("Location: main.html"); // Página para usuarios normales
         // }
 
         if (password_verify($contrasena, $hashed_password)) {
@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["usuarios"] = $row["usuario"];
             $_SESSION["rol"] = $row["rol"]; // Almacena el rol del usuario
             if ($_SESSION["rol"] == "admin") {
-                header("Location: /php/upload_img.php"); // Página de administrador
+                header("Location: php/upload_img.php"); // Página de administrador
             } else {
-                header("Location: /php/main.php"); // Página para usuarios normales
+                header("Location: php/main.php"); // Página para usuarios normales
             }
             mysqli_close($conexion);
             $success_message = "Inicio de sesión exitoso. Redirigiendo...";
             
             // Puedes usar una redirección meta o JavaScript para redirigir al usuario después de unos segundos
-            echo '<meta http-equiv="refresh" content="2;url=/php/main.php">';
+            echo '<meta http-equiv="refresh" content="2;url=php/main.php">';
             exit; // Salir del script
         } else {
             $error_message = "Contraseña o Correo incorrectos. Por favor, inténtelo de nuevo.";
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header id="main-header">
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" name="iniciar_sesion">Iniciar Sesión</button>
         </div>
         </form>
-        <p>¿No tienes cuenta? <a href="/php/nuevo_usuario.php">Regístrate aquí</a></p>
+        <p>¿No tienes cuenta? <a href="php/nuevo_usuario.php">Regístrate aquí</a></p>
         
         <!-- Mostrar mensaje de error si existe -->
         <div id="error-message">
