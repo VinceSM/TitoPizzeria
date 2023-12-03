@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if($_SESSION["rol"] != "admin"){header("Location: /login.html");}
+if($_SESSION["rol"] != "admin"){header("Location: ../Pizzeria/login.html");}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES["imagen"])) {
         // Conexión a la base de datos

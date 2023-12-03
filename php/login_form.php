@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $success_message = "Inicio de sesión exitoso. Redirigiendo...";
             
             // Puedes usar una redirección meta o JavaScript para redirigir al usuario después de unos segundos
-            echo '<meta http-equiv="refresh" content="2;url=php/main.php">';
+            echo '<meta http-equiv="refresh" content="2;url=main.php">';
             exit; // Salir del script
         } else {
             $error_message = "Contraseña o Correo incorrectos. Por favor, inténtelo de nuevo.";
