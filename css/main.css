@@ -44,13 +44,6 @@ header {
     cursor: pointer;
 }
 
-button{
-    text-decoration: none;
-    text-decoration-line: none;
-    color: #fff;
-
-}
-
 .cta-button:hover {
     background-color: #c04116;
 }

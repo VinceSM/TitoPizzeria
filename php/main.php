@@ -16,7 +16,6 @@
             <div id="menu-dropdown" class="dropdown-content">
                 <a href="menu.php">Ver Menú</a>
                 <a href="pedido.php">Ordenar Ahora</a>
-                <!-- <a href="upload_img.php">Solo personal autorizado</a> -->
                 <a href="logout.php">Cerrar Sesión</a>
             </div>
         </div>

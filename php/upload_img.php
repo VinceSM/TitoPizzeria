@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombreArchivo = $_FILES["imagen"]["name"];
         $ubicacionTemporal = $_FILES["imagen"]["tmp_name"];
 
-        $directorioDestino = "../Pizzeria/jpg/"; // Ajusta la ruta de destino a tu directorio
+        $directorioDestino = "../jpg/"; // Ajusta la ruta de destino a tu directorio
         $rutaDestino = $directorioDestino . $nombreArchivo;
 
         if (move_uploaded_file($ubicacionTemporal, $rutaDestino)) {
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($conexion->query($sql) === true) {
                 // Redirige al usuario a la página de menú
-                header("Location: menu.php");
+                header("Location: upload_img.php");
                 exit;
             } else {
                 echo "Error al guardar la información en la base de datos: " . $conexion->error;
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/boton.css">
     <title>Carga de pizzas</title>
 </head>
 <body>
@@ -76,6 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
     <br>
     <br>
-    <button class= "cta-button"> <a href="logout.php">Cerrar Sesión</a> </button>
+    <button> <a href="logout.php">Cerrar Sesión</a> </button>
+    <br>
+    <br>
+    <br>
+    <button> <a href="menu.php">Ver Menú</a> </button>
 </body>
 </html>

@@ -72,7 +72,7 @@ a {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-    width: 100%; /* Cambiamos el ancho al 100% para dispositivos móviles */
+    width: 100%; 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -102,7 +102,7 @@ footer {
     text-align: center;
     background-color: #333;
     color: #fff;
-    height: auto; /* Quitamos la altura fija para que se ajuste al contenido */
+    height: auto; 
     width: 100%;
     position: fixed;
     bottom: 0;
